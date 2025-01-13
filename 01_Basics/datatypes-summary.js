@@ -24,3 +24,31 @@ console.log("HELLO");
 }
 
 myFunction();
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Stack(Primitive), Heap(Non-primitive type)
+
+let myName = "Govinda"
+
+let anotherName = myName
+anotherName = "Gp Parida"
+
+console.log(myName);
+console.log(anotherName);
+
+let user = {
+    name:"Govinda",
+    age: 25,
+    weight: 90,
+}
+
+console.log(user);
+
+user.name = "Govinda Parida"
+console.log(user);
+
+let userTwo = user
+userTwo.email = "govindaprasadparida2@gmail.com"
+console.log(user);
+

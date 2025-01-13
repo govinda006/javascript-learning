@@ -19,3 +19,16 @@ console.table([
   booleanIsLoggedIn,
   typeof booleanIsLoggedIn,
 ]);
+
+//
+
+let someNumber = 33;
+
+let stringNumber = String(someNumber);
+
+console.table([
+  someNumber,
+  typeof someNumber,
+  stringNumber,
+  typeof stringNumber,
+]);

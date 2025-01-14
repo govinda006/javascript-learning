@@ -11,5 +11,24 @@ console.log(myArr2);
 // myArr.push(7);
 
 myArr.unshift(8);
+myArr.shift();
 
-console.log(myArr);
+// console.log(myArr.includes(5));
+// console.log(myArr.indexOf(6));
+
+const newArr = myArr.join();
+
+// console.log(myArr);
+// console.log(typeof myArr);
+
+// console.log(newArr);
+// console.log(typeof newArr);
+
+//slice and splice
+
+console.log("A", myArr);
+
+const myn1 = myArr.slice(1, 3);
+
+console.log(myn1);
+console.log("B", myArr);

@@ -4,29 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clock</title>
+    <title>Elegant Clock</title>
     <style>
-        /* General body styling */
+        /* Reset margin and padding for the body */
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4a90e2, #50c9c3);
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            /* Dark gradient background */
+            font-family: 'Roboto', Arial, sans-serif;
             color: white;
+            overflow: hidden;
         }
 
-        /* Styling for the clock */
+        /* Animated background effect */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+            transform: translate(-50%, -50%);
+            animation: rotateBackground 10s linear infinite;
+            pointer-events: none;
+        }
+
+        /* Keyframes for rotating background animation */
+        @keyframes rotateBackground {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Clock container styling */
         #clock {
-            font-size: 3rem;
+            position: relative;
+            font-size: 6rem;
             font-weight: bold;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            padding: 40px 60px;
+            color: #f3f3f3;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(255, 255, 255, 0.3),
+                inset 0 0 10px rgba(255, 255, 255, 0.1);
+            text-shadow:
+                0 0 10px rgba(255, 255, 255, 0.7),
+                0 0 20px rgba(255, 255, 255, 0.5);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        }
+
+        /* Glow and hover effects */
+        #clock:hover {
+            transform: scale(1.1);
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.6),
+                0 0 50px rgba(255, 255, 255, 0.6),
+                inset 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Make it responsive */
+        @media (max-width: 768px) {
+            #clock {
+                font-size: 4rem;
+                padding: 30px 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #clock {
+                font-size: 2.5rem;
+                padding: 20px 30px;
+            }
         }
     </style>
 </head>
@@ -36,7 +98,7 @@
     <script>
         const clock = document.getElementById('clock');
 
-        setInterval(function () {
+        setInterval(() => {
             let date = new Date();
             clock.innerHTML = date.toLocaleTimeString();
         }, 1000);

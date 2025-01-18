@@ -1,0 +1,9 @@
+Javascript --- 1 synchronous
+               2 single threaded
+
+Execution Context: -> execute one line of code at a time
+                    -> each operation waits for the last one before executing
+                    
+Blocking and Non-blocking code--Doesn't block execution -- Read file asynchronous
+    |
+    block the flow of the program -- Read file synchronous

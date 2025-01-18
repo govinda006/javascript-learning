@@ -6,17 +6,42 @@
     <title>Document Object Model</title>
     <style>
         .bg-black {
+            display: inline;
+            text-align: center;
             background-color: #211f1f;
             color: white;
+        }
+
+        li {
+            list-style-type: none;
+            display: inline;
+            margin: 100px;
+            justify-content: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: chartreuse;
         }
     </style>
 </head>
 
-<body class="bg-black">
-    <div>
+<body style="background-color: #211f1f;">
+    <Nav>
+        <ul>
+            <li className="list-items"><a href="http://127.0.0.1:5500/DOM/one.html">first</a></li>
+            <li className="list-items"><a href="https://in.pinterest.com/">second</a></li>
+            <li className="list-items"><a href="https://github.com/govinda006">third</a></li>
+            <li className="list-items"><a href="">fourth</a></li>
+            <li className="list-items"><a href="">fifth</a></li>
+        </ul>
+    </Nav>
+    <div class="bg-black">
         <h1 id="title" class="heading">Dom learning with chai and code <span style="display: none;">text test</span>
         </h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, iste. </p>
+
+
     </div>
 </body>
 

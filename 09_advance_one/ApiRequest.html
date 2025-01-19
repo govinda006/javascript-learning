@@ -5,23 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <img src="images/firefox2.png" alt="cat-image" height="200px" width="200px">
 </head>
 
 <body>
 
     <script>
-        const requestUrl = 'https://api.github.com/users/govinda006'
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', requestUrl)
-        xhr.onreadystatechange = function () {
-            console.log(xhr.readyState);
-            if (xhr.readyState === 4) {
-                const data = JSON.parse(this.responseText)
-                console.log(data.bio);
-            }
+        //        const requestUrl = 'https://api.github.com/users/govinda006'
+        //        const xhr = new XMLHttpRequest();
+        //        xhr.open('GET', requestUrl)
+        //        xhr.onreadystatechange = function () {
+        //            console.log(xhr.readyState);
+        //            if (xhr.readyState === 4) {
+        //                const data = JSON.parse(this.responseText)
+        //                console.log(data)
+        //                console.log(data.bio);
+        //            }
+        //
+        //        }
+        //        xhr.send();
 
-        }
-        xhr.send();
+
+        const myImage = document.querySelector("img");
+
+        myImage.addEventListener("click", () => {
+            const mySrc = myImage.getAttribute("src");
+            if (mySrc === "images/firefox-icon.png") {
+                myImage.setAttribute("src", "images/firefox2.png");
+            } else {
+                myImage.setAttribute("src", "images/firefox-icon.png");
+            }
+        });
+
     </script>
 
 </body>
